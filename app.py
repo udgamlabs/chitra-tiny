@@ -9,7 +9,7 @@ from chitra_tiny import ChitraTiny
 from gradio_theme import CSS, HEAD, footer, header, theme
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-pipe = ChitraTiny.from_pretrained(HERE if os.path.exists(os.path.join(HERE, "model.safetensors")) else "udgamlabs/Chitra-Tiny")
+pipe = ChitraTiny.from_pretrained(HERE if os.path.exists(os.path.join(HERE, "model.safetensors")) and os.path.exists(os.path.join(HERE, "config.json")) else "udgamlabs/Chitra-Tiny")
 
 
 def run(prompt, guidance, steps, seed, n, negative):
